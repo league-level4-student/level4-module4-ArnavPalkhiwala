@@ -6,7 +6,7 @@ import java.util.List;
 public class Hospital {
 
 	List<Doctor> getDoctors = new ArrayList<Doctor>();
-	List<Doctor> getPatients = new ArrayList<Doctor>();
+	List<Patient> getPatients = new ArrayList<Patient>();
 
 	public void addDoctor(GeneralPractitioner generalPractitioner) {
 		// TODO Auto-generated method stub
@@ -29,13 +29,33 @@ public class Hospital {
 		getPatients.add(patient);
 	}
 
-	public List<Doctor> getPatients() {
+	public List<Patient> getPatients() {
 		// TODO Auto-generated method stub
 		return getPatients;
 	}
 
 	public void assignPatientsToDoctors() {
 		// TODO Auto-generated method stub
+
+		System.out.println(getPatients.size());
+
+		for (int i = 0; i < getDoctors.size(); i++) {
+
+			for (int j = 0; j < getPatients.size(); j++) {
+
+				getDoctors.get(i).addPatient(getPatients.get(0));
+				System.out.println(getDoctors.get(i));
+				System.out.println(getDoctors.get(i).getPatients.size());
+				getPatients.remove(0);
+
+				if (getDoctors.get(i).getPatients().size() == 3) {
+
+					break;
+
+				}
+			}
+
+		}
 
 	}
 

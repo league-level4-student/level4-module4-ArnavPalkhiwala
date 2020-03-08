@@ -18,9 +18,19 @@ public class Doctor extends Hospital {
 		return false;
 	}
 
-	public void assignPatient(Patient patient) {
+	public void assignPatient(Patient patient) throws DoctorFullException {
 		// TODO Auto-generated method stub
-		getPatients.add(patient);
+		if (getPatients.size() >= 3) {
+
+			throw new DoctorFullException();
+
+		}
+
+		else {
+
+			getPatients.add(patient);
+
+		}
 	}
 
 	public void doMedicine() {
